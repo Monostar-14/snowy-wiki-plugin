@@ -38,8 +38,8 @@ export default defineAppConfig({
       links: [
         {
           icon: 'i-lucide-book-open',
-          label: 'SnowyMC 主站 Wiki',
-          to: 'https://github.com/SnowyMCT',
+          label: 'SnowyMC 主站',
+          to: 'https://www.snowymc.top',
           target: '_blank',
         },
         {
