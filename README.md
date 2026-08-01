@@ -1,82 +1,124 @@
-# Docus Default Starter
+# Snowy 插件文档
 
-> A beautiful, minimal starter for creating documentation with Docus
+SnowyMC 自研 Minecraft 插件的官方文档站，基于 [Docus](https://docus.dev)（Nuxt Content + Nuxt UI）构建。
 
-This is the default Docus starter template that provides everything you need to build beautiful documentation sites with Markdown and Vue components.
+线上地址：待部署
 
-> [!TIP]
-> If you're looking for i18n support, check out the [i18n starter](https://github.com/nuxt-themes/docus/tree/main/.starters/i18n).
+## 已收录的插件
 
-## ✨ Features
+| 插件 | 说明 | 文档目录 |
+| --- | --- | --- |
+| **SnowyGems** | 宝石镶嵌系统。宝石镶到装备上获得属性、附魔与常驻 BUFF，支持主动技能；兼容 1.21.4 → 26.x | `content/1.snowygems/` |
 
-- 🎨 **Beautiful Design** - Clean, modern documentation theme
-- 📱 **Responsive** - Mobile-first responsive design  
-- 🌙 **Dark Mode** - Built-in dark/light mode support
-- 🔍 **Search** - Full-text search functionality
-- 📝 **Markdown Enhanced** - Extended markdown with custom components
-- 🎨 **Customizable** - Easy theming and brand customization
-- ⚡ **Fast** - Optimized for performance with Nuxt 4
-- 🔧 **TypeScript** - Full TypeScript support
+以后新增插件时按下面的「添加新插件文档」一节操作即可。
 
-## 🚀 Quick Start
+## 本地开发
 
 ```bash
-# Install dependencies
+# 安装依赖（首次）
 npm install
 
-# Start development server
+# 启动开发服务器，默认 http://localhost:3000
 npm run dev
+
+# 构建静态站点
+npm run generate
 ```
 
-Your documentation site will be running at `http://localhost:3000`
+> Windows 上若 `better-sqlite3` 安装失败，通常是缺少编译工具链，装一个 [Visual Studio Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) 再重试。
 
-## 📁 Project Structure
+## 目录结构
 
 ```
-my-docs/
-├── content/              # Your markdown content
-│   ├── index.md         # Homepage
-│   ├── 1.getting-started/  # Getting started section
-│   └── 2.essentials/    # Essential documentation
-├── public/              # Static assets
-└── package.json         # Dependencies and scripts
+snowy-wiki-plugin/
+├── app.config.ts            # 站点配置：标题、配色、导航、目录、社交链接
+├── nuxt.config.ts           # Nuxt 配置（继承 docus 主题）
+├── content/
+│   ├── index.md             # 首页：Hero + 插件卡片 + 快速导航
+│   └── 1.snowygems/         # 一个插件 = 一个目录
+│       ├── .navigation.yml  #   该插件在侧栏/标签栏的标题与图标
+│       ├── 1.getting-started.md
+│       ├── 2.gems.md
+│       └── ...
+└── public/
+    └── favicon.ico
 ```
 
-## ⚡ Built with
+### 命名约定
 
-This starter comes pre-configured with:
+- **目录与文件名的数字前缀决定排序**，不会出现在 URL 里。`1.snowygems/2.gems.md` → `/snowygems/gems`
+- 每个插件目录下必须有 `.navigation.yml`，指定它在导航里显示的名字与图标：
 
-- [Nuxt 4](https://nuxt.com) - The web framework
-- [Nuxt Content](https://content.nuxt.com/) - File-based CMS
-- [Nuxt UI](https://ui.nuxt.com) - UI components
-- [Nuxt Image](https://image.nuxt.com/) - Optimized images
-- [Tailwind CSS 4](https://tailwindcss.com/) - Utility-first CSS
-- [Docus Layer](https://www.npmjs.com/package/docus) - Documentation theme
+  ```yaml
+  title: SnowyGems
+  icon: i-lucide-gem
+  ```
 
-## 📖 Documentation
+- 每篇文档的 frontmatter 建议写全四项，缺 `navigation.icon` 会让侧栏参差不齐：
 
-For detailed documentation on customizing your Docus project, visit the [Docus Documentation](https://docus.dev)
+  ```yaml
+  ---
+  title: 宝石配置
+  description: 一句话说明这页讲什么，会显示在搜索结果里。
+  navigation:
+    icon: i-lucide-gem
+  seo:
+    title: SnowyGems 宝石配置手册
+    description: 给搜索引擎看的描述，可以比 description 更详细。
+  ---
+  ```
 
-### 🤖 AI Assistant Skill
+## 添加新插件文档
 
-Get started quickly with Docus by adding specialized knowledge to your AI assistant (Cursor, Claude, etc.):
+1. 在 `content/` 下新建目录，数字前缀接着排：`content/2.你的插件名/`
+2. 放一个 `.navigation.yml` 写标题与图标（图标名从 [Lucide](https://lucide.dev/icons/) 里找，写成 `i-lucide-xxx`）
+3. 按 `1.顺序.文件名.md` 添加文档页
+4. 编辑 `content/index.md`，在「插件文档」一节把「更多插件」占位卡换成真实卡片，指向新插件的首页
 
-```bash
-npx skills add nuxt-content/docus
+## 写作约定
+
+这份文档站的内容有三条硬要求，新增文档请一并遵守：
+
+1. **对照源码写**。每个配置字段都要确认代码真的会读取；写了不生效的字段必须显式标注出来。
+2. **陷阱优先**。静默失效（不报错但没效果）比异常更难查，把已知原因按遇到频率排序并给出排查命令。
+3. **示例可直接抄**。示例取自插件自带的默认配置，复制改数字就能用，不写伪代码。
+
+常用的 Docus 组件：
+
+~~~md
+::alert{icon="i-lucide-info"}
+补充说明。
+::
+
+::alert{type="warning" icon="i-lucide-triangle-alert"}
+容易踩坑的地方。
+::
+
+::steps
+### 第一步
+### 第二步
+::
+
+::code-group
+```yaml [config.yml]
+Key: value
 ```
-
-This skill helps you create documentation faster by providing your AI assistant with best practices, MDC component usage, ready-to-use templates, writing guidelines, and configuration tips for Docus. Perfect for quickly scaffolding new documentation projects.
-
-## 🚀 Deployment
-
-Build for production:
-
-```bash
-npm run build
+```yaml [lang.yml]
+Key: value
 ```
+::
+~~~
 
-The built files will be in the `.output` directory, ready for deployment to any hosting provider that supports Node.js.
+## 站点配置在哪改
 
-## 📄 License
+| 想改什么 | 改哪里 |
+| --- | --- |
+| 站点标题、SEO 描述 | `app.config.ts` 的 `seo` / `header` |
+| 主题色 | `app.config.ts` 的 `ui.colors.primary` |
+| 右侧目录标题与底部链接 | `app.config.ts` 的 `toc` |
+| 「编辑此页」指向的仓库 | `app.config.ts` 的 `github` |
+| 首页样式与文案 | `content/index.md` |
 
-[MIT License](https://opensource.org/licenses/MIT) 
+## 反馈
+
+文档有错漏或想补充内容，欢迎提 [Issue](https://github.com/mincHR549/snowy-wiki-plugin/issues) 或直接 PR。
