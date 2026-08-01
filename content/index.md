@@ -106,7 +106,7 @@ SnowyMC 自研 Minecraft 插件的官方文档站。每个插件都有完整的�
   to: /snowygems/getting-started
   trailing-icon: i-lucide-arrow-right
   ---
-  阅读 SnowyGems 文档
+  阅读文档
   :::
 
   :::u-button
@@ -175,94 +175,6 @@ description: 点击进入各插件的完整手册。
     title: 更多插件
     ---
     SnowyMC 的其他插件文档正在整理中，会陆续加入本站。
-    ::::
-  :::
-::
-
-::u-page-section
----
-title: SnowyGems 快速导航
-description: 按你现在要做的事直接跳转。
----
-  :::u-page-grid
-    ::::u-page-card
-    ---
-    class: "snow-card"
-    icon: i-lucide-rocket
-    title: 安装与快速上手
-    to: /snowygems/getting-started
-    ---
-    放入插件、认识目录结构、跑通第一次镶嵌。
-    ::::
-
-    ::::u-page-card
-    ---
-    class: "snow-card"
-    icon: i-lucide-gem
-    title: 宝石配置
-    to: /snowygems/gems
-    ---
-    全部字段、Rewards 函数清单、Require 写法与实战示例。
-    ::::
-
-    ::::u-page-card
-    ---
-    class: "snow-card"
-    icon: i-lucide-sparkles
-    title: 技能与 BUFF
-    to: /snowygems/skills
-    ---
-    技能行语法、触发标记、条件与概率、形态切换。
-    ::::
-
-    ::::u-page-card
-    ---
-    class: "snow-card"
-    icon: i-lucide-layout-grid
-    title: 菜单配置
-    to: /snowygems/menus
-    ---
-    用字符网格自定义工作台，五种槽位类型。
-    ::::
-
-    ::::u-page-card
-    ---
-    class: "snow-card"
-    icon: i-lucide-unplug
-    title: 查看与拆卸宝石
-    to: /snowygems/dismantle
-    ---
-    拆卸费用、损坏概率，以及拆卸时到底撤销了什么。
-    ::::
-
-    ::::u-page-card
-    ---
-    class: "snow-card"
-    icon: i-lucide-shield-check
-    title: 权限节点
-    to: /snowygems/permissions
-    ---
-    全部节点清单、user/admin 伞节点、权限组示例。
-    ::::
-
-    ::::u-page-card
-    ---
-    class: "snow-card"
-    icon: i-lucide-git-compare
-    title: 多版本兼容
-    to: /snowygems/compat
-    ---
-    为什么同一份配置能跨版本用，混服怎么配。
-    ::::
-
-    ::::u-page-card
-    ---
-    class: "snow-card"
-    icon: i-lucide-wrench
-    title: 排错与调试
-    to: /snowygems/troubleshooting
-    ---
-    「宝石点了没反应」的排查路径与全部已知陷阱。
     ::::
   :::
 ::
