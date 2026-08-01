@@ -9,6 +9,9 @@ SnowyMC 自研 Minecraft 插件的官方文档站，基于 [Docus](https://docus
 | 插件 | 说明 | 文档目录 |
 | --- | --- | --- |
 | **SnowyGems** | 宝石镶嵌系统。宝石镶到装备上获得属性、附魔与常驻 BUFF，支持主动技能；兼容 1.21.4 → 26.x | `content/1.snowygems/` |
+| **Snow-Welcome** | 新人欢迎。新玩家首次进服全服广播可点击的欢迎消息，欢迎者获得奖励 | `content/2.snow-welcome/` |
+| **Snow-EnchantSP** | 附魔剥离。把装备附魔摘成附魔书，支持金币/点券/经验三种支付组合 | `content/3.snow-enchantsp/` |
+| **KBBSToper** | 论坛顶帖奖励。检测苦力怕论坛宣传帖顶帖记录并在游戏内发奖 | `content/4.kbbstoper/` |
 
 以后新增插件时按下面的「添加新插件文档」一节操作即可。
 
@@ -35,14 +38,20 @@ snowy-wiki-plugin/
 ├── nuxt.config.ts           # Nuxt 配置（继承 docus 主题）
 ├── content/
 │   ├── index.md             # 首页：Hero + 插件卡片 + 快速导航
-│   └── 1.snowygems/         # 一个插件 = 一个目录
-│       ├── .navigation.yml  #   该插件在侧栏/标签栏的标题与图标
-│       ├── 1.getting-started.md
-│       ├── 2.gems.md
-│       └── ...
+│   ├── 1.snowygems/         # 一个插件 = 一个目录
+│   │   ├── .navigation.yml  #   该插件在侧栏/标签栏的标题与图标
+│   │   ├── 1.getting-started.md
+│   │   ├── 2.gems.md
+│   │   ├── ...
+│   │   └── 11.changelog.md  #   每个插件最后一页是更新日志
+│   ├── 2.snow-welcome/
+│   ├── 3.snow-enchantsp/
+│   └── 4.kbbstoper/
 └── public/
     └── favicon.ico
 ```
+
+每个插件目录都包含一页 `changelog.md`（更新日志），排在该插件文档的最后。发版时在其顶部追加新条目。
 
 ### 命名约定
 
@@ -70,10 +79,11 @@ snowy-wiki-plugin/
 
 ## 添加新插件文档
 
-1. 在 `content/` 下新建目录，数字前缀接着排：`content/2.你的插件名/`
+1. 在 `content/` 下新建目录，数字前缀接着排：`content/5.你的插件名/`
 2. 放一个 `.navigation.yml` 写标题与图标（图标名从 [Lucide](https://lucide.dev/icons/) 里找，写成 `i-lucide-xxx`）
-3. 按 `1.顺序.文件名.md` 添加文档页
-4. 编辑 `content/index.md`，在「插件文档」一节把「更多插件」占位卡换成真实卡片，指向新插件的首页
+3. 按 `1.顺序.文件名.md` 添加文档页，**最后一页放 `changelog.md`**（更新日志）
+4. 编辑 `content/index.md`，在「插件文档」一节新增一张卡片指向该插件首页
+5. 更新本 README 顶部的「已收录的插件」表格
 
 ## 写作约定
 

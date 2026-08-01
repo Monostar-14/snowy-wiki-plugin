@@ -96,7 +96,7 @@ class: "snow-hero py-20 px-6 rounded-2xl ring-1 ring-black/5 dark:ring-white/10"
 Snowy 插件文档
 
 #description
-SnowyMC 自研 Minecraft 插件的官方文档站。每个插件都有完整的配置说明、命令与权限清单、以及从实际踩坑整理出的排错指南——所有内容都对照插件源码撰写，写什么就是代码里真正读什么。
+SnowyMC 自研 Minecraft 插件的官方文档站。每个插件都有完整的配置说明、命令与权限清单、更新日志，以及从实际踩坑整理出的排错指南——所有内容都对照插件源码撰写，写什么就是代码里真正读什么。
 
 #links
   :::u-button
@@ -136,6 +136,36 @@ description: 点击进入各插件的完整手册。
     to: /snowygems/getting-started
     ---
     宝石镶嵌系统。把宝石镶到装备上获得属性、附魔与常驻 BUFF，宝石还能带主动技能。支持 1.21.4 → 26.x 全版本，同一份配置跨版本通用。
+    ::::
+
+    ::::u-page-card
+    ---
+    class: "snow-card"
+    icon: i-lucide-hand-heart
+    title: Snow-Welcome
+    to: /snow-welcome/getting-started
+    ---
+    新人欢迎。新玩家首次进服全服广播可点击的欢迎消息，欢迎他的玩家获得金币、点券或自定义命令奖励。
+    ::::
+
+    ::::u-page-card
+    ---
+    class: "snow-card"
+    icon: i-lucide-scissors
+    title: Snow-EnchantSP
+    to: /snow-enchantsp/getting-started
+    ---
+    附魔剥离。把装备上的附魔摘下来变成附魔书，支持金币 / 点券 / 经验三种支付组合与按附魔单独定价。
+    ::::
+
+    ::::u-page-card
+    ---
+    class: "snow-card"
+    icon: i-lucide-megaphone
+    title: KBBSToper
+    to: /kbbstoper/getting-started
+    ---
+    论坛顶帖奖励。检测苦力怕论坛宣传帖的顶帖记录，玩家绑定论坛账号后顶帖即可在游戏内领奖。
     ::::
 
     ::::u-page-card
@@ -258,7 +288,7 @@ description: 我们对文档质量的三条硬要求。
     icon: i-lucide-bug
     title: 陷阱优先
     ---
-    静默失效比报错更难查。我们把「镶嵌成功但没效果」的全部已知原因按遇到频率排好序，配上排查命令。
+    静默失效比报错更难查。我们把「配了但没效果」的全部已知原因按遇到频率排好序，配上排查命令。
     ::::
 
     ::::u-page-card
