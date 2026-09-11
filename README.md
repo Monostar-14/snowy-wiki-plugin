@@ -12,6 +12,7 @@ SnowyMC 自研 Minecraft 插件的官方文档站，基于 [Docus](https://docus
 | **Snow-Welcome** | 新人欢迎。新玩家首次进服全服广播可点击的欢迎消息，欢迎者获得奖励 | `content/2.snow-welcome/` |
 | **Snow-EnchantSP** | 附魔剥离。把装备附魔摘成附魔书，支持金币/点券/经验三种支付组合 | `content/3.snow-enchantsp/` |
 | **KBBSToper** | 论坛顶帖奖励。检测苦力怕论坛宣传帖顶帖记录并在游戏内发奖 | `content/4.kbbstoper/` |
+| **Companions-Max** | 随行宠物、商店养成、独立 GUI 与游戏内编辑器；当前文档对应 2.0.4 | `content/5.Companions-Max/` |
 
 以后新增插件时按下面的「添加新插件文档」一节操作即可。
 
@@ -46,7 +47,8 @@ snowy-wiki-plugin/
 │   │   └── 11.changelog.md  #   每个插件最后一页是更新日志
 │   ├── 2.snow-welcome/
 │   ├── 3.snow-enchantsp/
-│   └── 4.kbbstoper/
+│   ├── 4.kbbstoper/
+│   └── 5.Companions-Max/
 └── public/
     └── favicon.ico
 ```
@@ -79,7 +81,7 @@ snowy-wiki-plugin/
 
 ## 添加新插件文档
 
-1. 在 `content/` 下新建目录，数字前缀接着排：`content/5.你的插件名/`
+1. 在 `content/` 下新建目录，数字前缀接着排：`content/6.你的插件名/`
 2. 放一个 `.navigation.yml` 写标题与图标（图标名从 [Lucide](https://lucide.dev/icons/) 里找，写成 `i-lucide-xxx`）
 3. 按 `1.顺序.文件名.md` 添加文档页，**最后一页放 `changelog.md`**（更新日志）
 4. 编辑 `content/index.md`，在「插件文档」一节新增一张卡片指向该插件首页

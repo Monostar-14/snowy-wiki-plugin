@@ -170,6 +170,16 @@ description: 点击进入各插件的完整手册。
 
     ::::u-page-card
     ---
+    class: "snow-card"
+    icon: i-lucide-paw-print
+    title: Companions-Max
+    to: /companions-max/getting-started
+    ---
+    随行宠物与养成系统。隐形盔甲架组合头颅和装备，提供商店、中文独立 GUI、管理员游戏内编辑器与命令补全。
+    ::::
+
+    ::::u-page-card
+    ---
     class: "snow-card-soon"
     icon: i-lucide-package-plus
     title: 更多插件
